@@ -2,30 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th,
-    td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #f5f5f5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 
@@ -163,7 +142,6 @@
               $value = queryhash($filehash, $apiKey[$i % $numberAPI]);
               if ($value != null) {
                 echo "<td>$value</td>";
-                echo "<td>$filehash</td>";
                 echo '<td>"updatedb"<a href="https://www.virustotal.com/gui/file/' . $filehash . '" target="_blank">Link VirusTotal</a></td>';
                 dbupdate($filehash, $value);
               } else {
@@ -182,9 +160,9 @@
               $i++;
             } else {
               echo "<td>($document->value)</td>";
-              echo '<td><a href="https://www.virustotal.com/gui/file /' . $filehash . '" target="_blank">Link VirusTotal</a></td>';
+              echo '<td><a href="https://www.virustotal.com/gui/file/' . $filehash . '" target="_blank">Link VirusTotal</a></td>';
             }
-            echo '<td>' . date("H:i:s") . '</td>';
+            //echo '<td>' . date("H:i:s") . '</td>';
 
             echo '</tr>';
           }
